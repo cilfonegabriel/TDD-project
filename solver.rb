@@ -1,22 +1,31 @@
 class Solver
-
-    def factorial(n)
-        if n<0
-            raise 'Number must be non-negative'
-        elsif(n==0)
-            factorial = 1
-        elsif
-            i = 1
-            factorial = 1
-            while i<=n do
-                factorial *= i
-                i = i+1
-            end
+    def factorial(num)
+      if num.negative?
+        raise 'Number must be non-negative'
+      elsif num.zero?
+        factorial = 1
+      elsif (i = 1)
+        factorial = 1
+        while i <= num
+          factorial *= i
+          i += 1
         end
-        factorial
+      end
+      factorial
     end
-
-  def reverse(word)
-    word.reverse
+    def reverse(word)
+      word.reverse
+    end
+  
+    def fizzbuzz(num)
+      if (num % 3.0).zero? && (num % 5.0).zero?
+        'fizzbuzz'
+      elsif (num % 3.0).zero?
+        'fizz'
+      elsif (num % 5.0).zero?
+        'buzz'
+      else
+        num.to_s
+      end
+    end
   end
-end
